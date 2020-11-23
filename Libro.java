@@ -13,7 +13,6 @@ public class Libro {
     private String autor;
     private String titulo;
     private int numeroPaginas;
-    private String mensaje;
     private String numeroReferencia;
 
     /**
@@ -40,10 +39,14 @@ public class Libro {
     }
     
     public String  getDetalles(){
+        String mensaje = "";
         if (numeroReferencia == ""){
-            return mensaje = "Titulo: " + titulo + ", Autor: " + autor + ", Paginas: " + numeroPaginas + ", Numero referencia: ZZZ";
-        }        
-        return mensaje = "Titulo: " + titulo + ", Autor: " + autor + ", Paginas: " + numeroPaginas + ", Numero referencia: " + numeroReferencia + "";
+            mensaje = "Titulo: " + titulo + ", Autor: " + autor + ", Paginas: " + numeroPaginas + ", Numero referencia: ZZZ";
+        }
+        else {
+            mensaje = "Titulo: " + titulo + ", Autor: " + autor + ", Paginas: " + numeroPaginas + ", Numero referencia: " + numeroReferencia + "";
+        }
+        return mensaje; 
     }
         
     public String getNumeroReferencia(){
