@@ -23,7 +23,7 @@ public class Libro {
         autor = autorLibro;
         titulo = tituloLibro;
         numeroPaginas = paginas;
-        mensaje ="Titulo: " + titulo + ", Autor: " + autor + ", Paginas:" + numeroPaginas + "";
+        mensaje ="Titulo: " + titulo + ", Autor: " + autor + ", Paginas: " + numeroPaginas + "";
     }
 
     public String getAutorLibro(){
@@ -37,10 +37,11 @@ public class Libro {
     public int getPaginas(){
         return numeroPaginas;
     }
-    
+
     public String  getDetalles(){
         return mensaje;
     }
+
     public void  imprimirDetalles(){ 
         System.out.println(""+ mensaje +"");
     }
