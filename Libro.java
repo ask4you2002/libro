@@ -14,6 +14,7 @@ public class Libro {
     private String titulo;
     private int numeroPaginas;
     private String numeroReferencia;
+    private int vecesPrestado;
 
     /**
      * Fija el autor y el titulo del libro a los dados como parametro
@@ -24,6 +25,7 @@ public class Libro {
         titulo = tituloLibro;
         numeroPaginas = paginas;
         numeroReferencia = "";
+        vecesPrestado = 0;
     }
 
     public String getAutorLibro(){
@@ -41,7 +43,7 @@ public class Libro {
     public String  getDetalles(){
         String mensaje = "";
         if (numeroReferencia == ""){
-            mensaje = "Titulo: " + titulo + ", Autor: " + autor + ", Paginas: " + numeroPaginas + ", Numero referencia: ZZZ";
+            mensaje = "Titulo: " + titulo + ", Autor: " + autor + ", Paginas: " + numeroPaginas + ", Numero referencia: ZZZ, Veces prestado: " + vecesPrestado + "";
         }
         else {
             mensaje = "Titulo: " + titulo + ", Autor: " + autor + ", Paginas: " + numeroPaginas + ", Numero referencia: " + numeroReferencia + "";
@@ -52,7 +54,15 @@ public class Libro {
     public String getNumeroReferencia(){
         return numeroReferencia;
     }   
-        
+    
+    public int getVecesPrestado(){
+        return vecesPrestado;
+    }
+    
+    public void prestar(){
+        vecesPrestado = vecesPrestado + 1;
+    }
+    
     public void setNumeroReferencia(String numeroReferencia){
         if (numeroReferencia.length() < 3){
             System.out.println("Error: numero de referencia como minimo 3 caracteres.");
@@ -64,10 +74,10 @@ public class Libro {
         
     public void  imprimirDetalles(){ 
         if (numeroReferencia == ""){
-            System.out.println("Titulo: " + titulo + ", Autor: " + autor + ", Paginas: " + numeroPaginas + ", Numero referencia: ZZZ");
+            System.out.println("Titulo: " + titulo + ", Autor: " + autor + ", Paginas: " + numeroPaginas + ", Numero referencia: ZZZ, Veces prestado: " + vecesPrestado +"");
         }
         else {
-            System.out.println("Titulo: " + titulo + ", Autor: " + autor + ", Paginas: " + numeroPaginas + ", Numero referencia: " + numeroReferencia + "");
+            System.out.println("Titulo: " + titulo + ", Autor: " + autor + ", Paginas: " + numeroPaginas + ", Numero referencia: " + numeroReferencia + " ,Veces prestado: " + vecesPrestado +"");
         }
     }
     
