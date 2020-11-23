@@ -25,9 +25,6 @@ public class Libro {
         titulo = tituloLibro;
         numeroPaginas = paginas;
         numeroReferencia = "";
-        if (numeroReferencia == ""){
-            numeroReferencia = "ZZZ";
-        }
     }
 
     public String getAutorLibro(){
@@ -43,6 +40,9 @@ public class Libro {
     }
     
     public String  getDetalles(){
+        if (numeroReferencia == ""){
+            return mensaje = "Titulo: " + titulo + ", Autor: " + autor + ", Paginas: " + numeroPaginas + ", Numero referencia: ZZZ";
+        }        
         return mensaje = "Titulo: " + titulo + ", Autor: " + autor + ", Paginas: " + numeroPaginas + ", Numero referencia: " + numeroReferencia + "";
     }
         
@@ -60,7 +60,12 @@ public class Libro {
     }
         
     public void  imprimirDetalles(){ 
-        System.out.println("Titulo: " + titulo + ", Autor: " + autor + ", Paginas: " + numeroPaginas + ", Numero referencia: " + numeroReferencia + "");
+        if (numeroReferencia == ""){
+            System.out.println("Titulo: " + titulo + ", Autor: " + autor + ", Paginas: " + numeroPaginas + ", Numero referencia: ZZZ");
+        }
+        else {
+            System.out.println("Titulo: " + titulo + ", Autor: " + autor + ", Paginas: " + numeroPaginas + ", Numero referencia: " + numeroReferencia + "");
+        }
     }
     
     public void  imprimeAutor() {
